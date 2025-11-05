@@ -1,0 +1,1080 @@
+@import url('https://fonts.googleapis.com/css2?family= :ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* dimension */
+    --width-full: 100%;
+    --width-12col: 1200px;
+
+    /*grid settings*/
+    --grid-gap: 10px;
+    --padding-default: 20px;
+
+    /*colors*/
+    --background-color-navigation: #00000088;
+    --background-color-light: #ededed;
+    --background-color-dark-bg: #111111;
+    --primary-color: #bf5b23;
+    --color-white: #ffffff;
+    --color_black: #373737;
+    --color-light: #ebebeb;
+    --color-grey: #ffffffb3;
+    /* swatches */
+    --category-seafood: #3e30e2;
+    --category-chicken: #249c8e;
+    --category-meats: #c98177;
+    --category-veg: #298f3f;
+    --category-dessert: #9374eb;
+    --category-misc: #9a951e;
+    --category-pasta: #bf5b23;
+}
+
+/* reset css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: var(--width-full);
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    background-color: var(--background-color-dark-bg);
+}
+
+.navigation, .hero, .image-section, .footer {
+    width: var(--width-full);
+}
+
+.todays_recipes, .categories, .content-area {
+    width: var(--width-12col);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    gap: var(--grid-gap);
+    width: var(--width-full);
+}
+
+.navigation {
+    background-color: var(--background-color-navigation);
+    padding:30px 0 30px 0;
+    position: absolute;
+    z-index: 10;
+    width: var(--width-full);
+    display: flex;/* center elements from this line and bellow*/
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.fixed {
+    position:fixed;
+    top:0;
+    width: 100%;
+    z-index: 1000; /*it makes it  go on top like a layer */
+}
+
+.menu-container {
+    width: var(--width-12col);
+}
+
+.menu-container ul { /* selecting the "ul" (list) inside the container "menu-container" by using space*/
+    display: flex;
+    list-style: none;
+}
+
+.menu-container a{
+    padding:0 10px;
+    text-decoration: none;
+    color: var(--color-white);
+    text-transform: uppercase;
+}
+
+.menu-container ul li{
+        border-right: 1px solid var(--background-color-light); /*right border for the menu*/
+}
+
+.menu-container ul li:last-child{ /* last chield doesnt have right border*/
+    border-right: none;
+}
+
+.menu-container ul li a:hover{
+    color: var(--primary-color);
+}
+
+.clicked {
+    color: var(--primary-color) !important;
+}
+
+.hero {
+    background-image: url(../img/background_bowl.png); /*deisgn image that is just background and not clickable*/
+    min-height: 600px;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: var(--background-color-light);
+    margin: 0;
+    border-bottom: 1px solid var(--background-color-dark-bg);
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: var(--grid-gap);
+    width: var(--width-12col);
+    height: 100%;
+}
+
+.hero-text a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.hero-text {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    margin: 200px 0 0 0;
+}
+
+.hero-text h1 {
+    padding: 0; /* redundant - DRY (dont repeat yourself) ---- this code is done above in the * and it effects the whole code */
+    margin: 15px 0; /* because it goes clock wise it will go 15 top - 0 right - and then repeat itself and go 15 bottom - 0 left */
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.hero-text h1 span {
+    font-weight: 900;
+    font-size: 37px;
+}
+
+.hero-text p {
+    font-size: 14px;
+}
+
+.search-box {
+    grid-column: 2 / span 3;
+    grid-row: 2;
+    margin: 60px 0 0 0;
+}
+
+.search-box p {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.search-input {
+    background-color: transparent; /* see throught color (no color*/
+    padding: 10px 20px 10px 40px;
+    border: 1px solid var(--background-color-light);
+    border-radius: 5px;
+    outline: none; /*remove outline when you click the search box*/
+    color: var(--background-color-light);
+    margin: 0 0 10px 0;
+}
+
+.search-input::placeholder {
+    color: var(--background-color-light);
+}
+
+/*Todays recipes area start */
+
+.background_sections_svg {
+    background-image: url(../img/Ellipse\ 2.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 1020px;
+}
+
+.todays_recipes {
+    width: var(--width-12col);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 130px auto;
+    gap: var(--grid-gap);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.todays_recipes_headline {
+    width: 100%;
+    color: var(--background-color-light);
+    height: 45px;
+    border-bottom: 1px solid var(--background-color-light);
+    margin: 70px 0 0 0;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.todays_recipes_content_block_image img {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px 5px 0 0;
+    background-color: #373737;
+}
+
+.todays_recipes_content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+    height: fit-content;
+    width: var(--width-12col);
+    box-sizing: border-box;
+}
+
+.todays_recipes_content_block {
+    background-color: var(--background-color-light);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* re-define the way display:flex orientates */
+}
+
+.todays_recipes_content_block_text {
+    padding: 20px;
+    color: var(--color_black);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todays_recipes_content_block_text h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.todays_recipes_content_block_text p {
+    font-size: 16px;
+}
+
+.todays_recipes_content_block_bottom_area {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0 0;
+}
+
+.todays_recipes_content_block_bottom_area_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 0 10px;
+}
+
+.todays_recipes_content_block_bottom_area_left p {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.todays_recipes_content_block_bottom_area_left p:last-child {
+    font-weight: 800;
+}
+
+.todays_recipes_content_block_bottom_area_right_button button {
+    background-color: var(--color_black);
+    border: 1px solid var(--color-grey);
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+.todays_recipes_content_block_bottom_area_right_button button a {
+    color: var(--color-white);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/* data-categories colors start */
+/* Seafood Category Start */
+div[data-category="seafood"]{
+    border-left: 1px solid var(--category-seafood);
+}
+p[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+svg[data-category="seafood"]{
+    fill: var(--category-seafood);
+}
+
+span[data-category="seafood"]{
+    color: var(--category-seafood);
+}
+
+h3[data-category="seafood"]{
+    border-left: 2px solid var(--category-seafood);
+}
+/* Seafood Category End */
+/* Chicken Category Start */
+div[data-category="chicken"] {
+    border-left: 1px solid var(--category-chicken);
+}
+
+p[data-category="chicken"] {
+    color: var(--category-chicken);
+}
+
+svg[data-category="chicken"]{
+    stroke: var(--category-chicken);
+}
+
+span[data-category="chicken"]{
+    color: var(--category-chicken);
+}
+
+h3[data-category="chicken"]{
+    border-left: 2px solid var(--category-chicken);
+}
+/* Chicken Category End */
+/* Veg Category Start */
+div[data-category="vegeterian"] {
+    border-left: 1px solid var(--category-veg);
+}
+p[data-category="vegeterian"] {
+    color: var(--category-veg);
+}
+svg[data-category="vegeterian"]{
+    stroke: var(--category-veg);
+}
+
+span[data-category="veg"]{
+    color: var(--category-veg);
+}
+
+h3[data-category="veg"]{
+    border-left: 2px solid var(--category-veg);
+}
+/* Veg Category End */
+/* Pasta Category Start */
+div[data-category="pasta"] {
+    border-left: 1px solid var(--category-pasta);
+}
+p[data-category="pasta"] {
+    color: var(--category-pasta);
+}
+svg[data-category="pasta"]{
+    fill: var(--category-pasta);
+}
+
+span[data-category="pasta"]{
+    color: var(--category-pasta);
+}
+
+h3[data-category="pasta"]{
+    border-left: 2px solid var(--category-pasta);
+}
+/* Pasta Category End */
+/* Misc Category Start */
+div[data-category="misc"] {
+    border-left: 1px solid var(--category-misc);
+}
+p[data-category="misc"] {
+    color: var(--category-misc);
+}
+svg[data-category="misc"]{
+    stroke: var(--category-misc);
+}
+
+span[data-category="misc"]{
+    color: var(--category-misc);
+}
+
+h3[data-category="misc"]{
+    border-left: 2px solid var(--category-misc);
+}
+/* Misc Category End */
+/* Meats Category Start */
+div[data-category="meats"] {
+    border-left: 1px solid var(--category-meats);
+}
+p[data-category="meats"] {
+    color: var(--category-meats);
+}
+svg[data-category="meats"]{
+    stroke: var(--category-meats);
+}
+
+span[data-category="meats"]{
+    color: var(--category-meats);
+}
+
+h3[data-category="meats"]{
+    border-left: 2px solid var(--category-meats);
+}
+/* Meats Category End */
+/* Dessert Category Start */
+div[data-category="dessert"] {
+    border-left: 1px solid var(--category-dessert);
+}
+p[data-category="dessert"] {
+    color: var(--category-dessert);
+}
+svg[data-category="dessert"]{
+    stroke: var(--category-dessert);
+}
+
+span[data-category="dessert"]{
+    color: var(--category-dessert);
+}
+
+h3[data-category="dessert"]{
+    border-left: 2px solid var(--category-dessert);
+}
+/* Dessert Category End */
+/* data-categories colors end */
+
+/* Categories start */
+
+.categories {
+    width: var(--width-12col);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 130px auto;
+    gap: var(--grid-gap);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.category_selection_headline {
+    width: 100%;
+    color: var(--background-color-light);
+    height: 45px;
+    border-bottom: 1px solid var(--background-color-light);
+    margin: 70px 0 0 0;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.category_selection_background {
+    background-color: var(--background-color-light);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    height: 90px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category_selection_background svg{
+    height: 37px;
+    width: 37px;
+    margin-bottom: 5px;
+}
+
+.category_selection_background_item  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.all_star {
+    background-image: url(../img/femalechef.png);
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+    background-size: cover;
+    height: 600px;
+    width: var(--width-12col);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.all_star_box {
+    background-color: var(--background-color-light);
+    width: 367px;
+    height: 187px;
+    padding: 30px;
+}
+
+.all_star_box h2 {
+    color: #FF5C00;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 10px 0px 10px 0px;
+}
+
+.all_star_box h5 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.all_star_box p {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+/* In the kitchen start */
+
+.in_the_kitchen_background {
+    display: flex;
+    justify-content: center;
+}
+
+.in_the_kitchen {
+    width: var(--width-12col);
+}
+
+.in_the_kitchen_headline {
+    width: 100%;
+    color: var(--background-color-light);
+    height: 45px;
+    border-bottom: 1px solid var(--background-color-light);
+    margin: 70px 0 0 0;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.in_the_kitchen_main_block {
+    background-color: var(--background-color-light);
+    height: 1140px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 2 1fr;
+    grid-template-rows: 380px auto;
+    box-sizing: border-box;
+}
+
+
+.in_the_kitchen_main_block h2{
+    font-weight: 600;
+    border-left: 2px var(--primary-color) solid;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.in_the_kitchen_main_block h1{
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 0 14px 0;
+}
+
+.in_the_kitchen_main_block p {
+    font-weight: 350;
+    font-size: 16px;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_one button:hover {
+    cursor: pointer;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_one a:hover {
+    cursor: pointer;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_one a {
+    cursor: pointer;
+    margin-top: 100px;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    margin: 80px 180px 60px 100px;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 237px;
+    margin: 80px 180px 60px 100px;
+}
+
+.in_the_kitchen_left_block_two_in_the_kitchen_commun_block_flex_three {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 212px;
+    margin: 80px 180px 60px 100px;
+}
+
+.in_the_kitchen_left_block_one {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.in_the_kitchen_right_block_one {
+    background-image: url(../img/in_the_kicthen_one.png);
+    background-size: cover;
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.in_the_kitchen_left_block_two {
+    grid-column: 2 / 3;
+    grid-row: 2;
+}
+
+.in_the_kitchen_right_block_two {
+    background-image: url(../img/in_the_kicthen_two.png);
+    background-size: cover;
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.in_the_kitchen_left_block_three {
+    grid-column: 1 / 2;
+    grid-row: 3;
+}
+
+.in_the_kitchen_right_block_three {
+    background-image: url(../img/in_the_kicthen_three.png);
+    background-size: cover;
+    grid-column: 2 / 3;
+    grid-row: 3;
+}
+
+.in_the_kitchen_button {
+    background-color: var(--color_black);
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px 53px 10px 53px;
+    border-style: none;
+    font-weight:100;
+    height: 40px;
+    width: 179px;
+}
+
+.mt-1 {
+    margin-top: 100px;
+}
+
+.mt-2 {
+    margin-top: 70px;
+}
+
+.mt-3 {
+    margin-top: 45px;
+}
+
+.footer {
+    background-color: var(--primary-color);
+    margin-top: 40px;
+}
+
+.footer_background {
+    width: var(--width-12col);
+    height: 147px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    color: var(--color_black);
+    margin: 0 auto;
+    align-items: center;
+}
+
+.footer_social_media {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer_social_media svg{
+    height: 24px;
+    width: 24px;
+}
+
+.footer_social_commun {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer_social_commun p {
+    padding-left: 10px;
+}
+
+.footer_text_links {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer_text_links_commun {
+    padding-bottom: 5px;
+}
+
+.footer_link {
+    grid-column: 3 / 5;
+    border-left: 1px solid var(--background-color-light);
+    height: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 10px;
+}
+
+.footer_link_text {
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer_link_text a{
+    color: var(--background-color-light);
+    padding-top: 5px;
+}
+
+.footer_link_etsy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 15px;
+}
+
+.footer_link_etsy p {
+    padding-left: 10px;
+    text-align: right;
+}
+
+/* HOW TO PLATE HTML START */
+
+.michelinchef {
+    color: var(--primary-color);
+}
+
+.hero2 {
+    background-image: url(../img/hero2.jpg); /*deisgn image that is just background and not clickable*/
+    min-height: 680px;
+    height: auto;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: var(--background-color-light);
+    margin: 0;
+    border-bottom: 2px solid var(--background-color-dark-bg);
+}
+
+.svgscroll {
+    /* margin: 100px 0 0 100px; */
+    grid-column: 2 / 3;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    min-width: 50px;
+}
+
+.svgscroll svg{
+    height: 50px;
+    width: 50px;
+}
+
+.top_food_presentation_techniques_headline {
+    width: 100%;
+    color: var(--background-color-light);
+    height: 45px;
+    border-bottom: 1px solid var(--background-color-light);
+    margin: 30px 0 0 0;
+    font-size: 37px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.top_food_presentation_techniques {
+    width: var(--width-12col);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 100px auto;
+    gap: var(--grid-gap);
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.top_food_presentation_techniques_box {
+    background-color: var(--background-color-light);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    color: var(--color_black);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    height: 110px;
+}
+
+.top_food_presentation_techniques_box svg {
+    min-width: 45px;
+    min-height: 45px;
+    padding: 10px 0 10px 0;
+    stroke: var(--primary-color);
+    fill: var(--primary-color);
+}
+
+.tips {
+    background-image: url(../img/backgroundtips.png);
+    width: var(--width-full);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tips_main_area {
+    width: var(--width-12col);
+    margin-top: 93px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--grid-gap);
+    grid-template-rows: auto;
+    box-sizing: border-box;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.tips_main_area_create_height_title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid var(--primary-color);
+}
+
+.tips_main_area_create_height_title h2 {
+    color: var(--primary-color);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform:uppercase;
+    font-size: 32px;
+}
+
+.tips_main_area_create_height_img {
+    background-image: url(../img/food_height.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-column: 2/8;
+    grid-row: 1/2;
+    height: 441px;
+    border-radius: 20px;
+}
+
+.tips_main_area_create_height_text p{
+    padding-bottom: 15px;
+}
+
+.tips_main_area_create_height_text {
+    grid-column: 8/13;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.tips_main_area_create_height_text ul {
+    list-style-position: inside;
+    padding-left: 20px;
+}
+
+.tips_main_area_two {
+    padding-top: 20px;
+    border-top: 2px solid var(--primary-color);
+    
+}
+
+.tips_main_area_create_height_title_two {
+    grid-column: 12 / 13;
+    transform: rotate(-180deg);
+}
+
+.tips_main_area_create_height_img_two {
+    grid-column: 6 / 12;
+    background-image: url(../img/meat_cut.jpg);
+}
+
+.tips_main_area_create_height_text_two {
+    grid-column: 1 / 6;
+}
+
+/* SEARCH PAGE */
+
+.hero-container-searchpage {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
+    gap: var(--grid-gap);
+    width: var(--width-12col);
+    height: 100%;
+}
+
+
+.hero-searchpage {
+    background-color: var(--background-color-dark-bg);
+    background: linear-gradient(0deg, #ededed00, #ededed07);
+    min-height: 400px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    color: var(--background-color-light);
+    margin: 0;
+}
+
+.search-box-searchpage {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    margin: 60px 0 0 0;
+}
+
+.search-input {
+    background-color: transparent;
+    padding: 10px 20px 10px 40px;
+    border: 1px solid var(--background-color-light);
+    border-radius: 5px;
+    outline: none;
+    color: var(--background-color-light);
+    margin: 0 0 10px 0;
+}
+
+.search-input::placeholder {
+    color: var(--background-color-light);
+}
+
+.fullsearch-headline {
+    width: 100%;
+    color: var(--background-color-light);
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.filter-category-checkbox {
+    background-color: var(--background-color-dark-bg);
+    background: linear-gradient(90deg, #ededed11, #ededed07);
+    grid-column: 6 / span 7;
+    grid-row: 2;
+    padding: 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 240px;
+    border-radius: 5px;
+}
+
+.filter-category-checkbox h3 {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.filter-category-checkbox label {
+    display: flex;
+    align-items: center;
+    margin: 0px 0;
+    color: var(--background-color-light);
+    font-size: 14px;
+    font-weight: 100;
+    width: 50%;
+    height: 20px;
+}
+
+.filter-category-checkbox input[type="radio"] {
+    margin-right: 10px;
+    height: 22px;
+    width: 22px;
+}
+
+.filter-category-checkbox input:checked {
+    border: 2px solid var(--primary-color);
+}
+
+.filter-category-checkbox input[type="radio"]#chicken {
+    accent-color: var(--category-chicken);
+}
+.filter-category-checkbox input[type="radio"]#seafood {
+    accent-color: var(--category-seafood);
+}
+.filter-category-checkbox input[type="radio"]#meat {
+    accent-color: var(--category-meats);
+}
+.filter-category-checkbox input[type="radio"]#veg {
+    accent-color: var(--category-veg);
+}
+.filter-category-checkbox input[type="radio"]#dessert {
+    accent-color: var(--category-dessert);
+}
+.filter-category-checkbox input[type="radio"]#misc {
+    accent-color: var(--category-misc);
+}
+.filter-category-checkbox input[type="radio"]#pasta {
+    accent-color: var(--category-pasta);
+}
+
+.serp {
+    border-top: 1px solid var(--color_black);
+    width: var(--width-12col);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); ;
+}
+
+.serp-container {
+    grid-column: 2 / span 10;
+}
+
+.serp-item {
+    margin: 0 auto;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color_black);
+    padding: 50px 0;
+}
+
+.serp-item h3 {
+    color: var(--background-color-light);
+    padding-left: 9px;
+    font-size: 16px;
+}
+.serp-item h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.serp-item p {
+    color: var(--background-color-light);
+    font-size: 16px;
+    font-weight: 300;
+}

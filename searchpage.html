@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Page Mandatory</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- navigation -->
+        <nav class="navigation fixed">
+            <div class="menu-container">
+                <ul>
+                    <li>
+                        <a class="clicked" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="searchpage.html">Recipes</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- header area -->
+        <header class="hero-searchpage">
+            <div class="hero-container-searchpage">
+                <!-- <div class="hero-text">
+                    <p>#1 Bender's most shiny recipe</p>
+                    <h1>Boozy brown <br><span>Lentil soup</span></h1>
+                    <p>40% healthy</p>
+                </div> -->
+                <div class="search-box-searchpage">
+                    <div class="fullsearch-headline">
+                        Full Search
+                    </div>
+                    <input type="search" name="" id="" class="search-input" placeholder="Search"> <!--placeholder changes the name inside the search bar-->
+                    <p>Lets go already!</p>
+                </div>
+                <div class="filter-category-checkbox">
+                    <h3>Search filter : category</h3>
+                    <label>
+                        <input type="radio" name="category" id="chicken" value="chicken">
+                        Chicken
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="seafood" value="seafood">
+                        Seafood
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="meat" value="meat">
+                        Meat
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="veg" value="veg">
+                        Vegitarian
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="dessert" value="dessert">
+                        Dessert
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="misc" value="misc">
+                        Miscellaneous
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="pasta" value="pasta">
+                        Pasta
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <div class="serp">
+            <div class="serp-container">
+                <!-- each result based on a search start -->
+                <div class="serp-item">
+                    <h3 data-category="chicken">Category: <span data-category="chicken">CHICKEN</span></h3>
+                    <h2>Search result one</h2>
+                    <p>This will be the excerpt from WordPress, and you can control several things here. Like the length of the text that is shown and multiple other things. Now i just writing stuff to fill it out, and the final three dots indicate there is more text ... </p>
+                </div>
+                <!-- each result based on a search end -->
+                 <!-- each result based on a search start -->
+                <div class="serp-item">
+                    <h3 data-category="seafood">Category: <span data-category="seafood">SEAFOOD</span></h3>
+                    <h2>Search result two</h2>
+                    <p>This will be the excerpt from WordPress, and you can control several things here. Like the length of the text that is shown and multiple other things. Now i just writing stuff to fill it out, and the final three dots indicate there is more text ... </p>
+                </div>
+                <!-- each result based on a search end -->
+            </div>
+        </div>
+        <!-- todays recipes -->
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer_background">
+                <div class="footer_social_media">
+                    <div class="footer_social_media_youtube footer_social_commun">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#373737" stroke-width="1.5"><path fill="#fff" stroke-linecap="round" stroke-linejoin="round" d="m14 12l-3.5 2v-4z"/><path d="M2 12.708v-1.416c0-2.895 0-4.343.905-5.274c.906-.932 2.332-.972 5.183-1.053C9.438 4.927 10.818 4.9 12 4.9s2.561.027 3.912.065c2.851.081 4.277.121 5.182 1.053S22 8.398 22 11.292v1.415c0 2.896 0 4.343-.905 5.275c-.906.931-2.331.972-5.183 1.052c-1.35.039-2.73.066-3.912.066s-2.561-.027-3.912-.066c-2.851-.08-4.277-.12-5.183-1.052S2 15.602 2 12.708Z"/></g></svg>
+                        <p>YouTube</p>
+                    </div>
+                    <div class="footer_social_media_instagram footer_social_commun">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#373737" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/><path d="M3 16V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m17.5 6.51l.01-.011"/></g></svg>
+                        <p>Instagram</p>
+                    </div>
+                    <div class="footer_social_media_facebook footer_social_commun">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#373737" d="M19.02 4.975A9.93 9.93 0 0 0 2.07 12A9.935 9.935 0 0 0 12 21.935a10 10 0 0 0 3.8-.75a10.2 10.2 0 0 0 3.22-2.16a9.934 9.934 0 0 0 0-14.05m-.7 13.34a8.92 8.92 0 0 1-5.32 2.57v-6.56h1.88a1 1 0 0 0 0-2H13v-2.74a1 1 0 0 1 1-1h1.2a1 1 0 0 0 0-2h-1.7a2.5 2.5 0 0 0-2.5 2.5v3.24H9.13a1 1 0 1 0 0 2H11v6.56a8.919 8.919 0 1 1 9.26-5.47a9.1 9.1 0 0 1-1.94 2.9"/></svg>
+                        <p>Facebook</p>
+                    </div>
+                </div>
+                <div class="footer_text_links">
+                    <div class="footer_text_links_home footer_text_links_commun">
+                        <p>Home</p>
+                    </div>
+                    <div class="footer_text_links_recipe footer_text_links_commun">
+                        <p>Recipe</p>
+                    </div>
+                    <div class="footer_text_links_about footer_text_links_commun">
+                        <p>About</p>
+                    </div>
+                </div>
+                <div class="footer_link">
+                    <div class="footer_link_text">
+                        <p>https://open.spotify.com/track/4gRA0i5sxx3jAhHaVjPnUN?si=aaba07b09223416c</p>
+                        <a href="https://open.spotify.com/album/6Xuu2z00jxRPZei4IJ9neK">https://open.spotify.com/album/6Xuu2z00jxRPZei4IJ9neK</a>
+                    </div>
+                    <div class="footer_link_etsy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#373737" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M17.253 19.917A9.5 9.5 0 0 0 9.89 2.736m7.364 17.18V17m0 2.917H20.5M6.722 4.1a9.5 9.5 0 0 0 7.389 17.165M6.722 4.1V7m0-2.9H3.5"/><path d="M12.5 7L9 12h6l-3.5 5"/></g></svg>
+                        <p>Etsy is powered by 100% <br> renewable electricity.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
