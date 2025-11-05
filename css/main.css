@@ -1226,3 +1226,39 @@ h3[data-category="dessert"]{
     grid-row: 2 / 2;
     margin-left: 20px;
 }
+
+
+/* RESPONSIVE DESIGN */
+
+@media (width <= 1000px) {
+
+    .menu-container {
+        width: auto;
+    }
+
+    .hero {
+        background-image: none;
+    }
+
+    .hero-text {
+        margin-left: 25px;
+    }
+
+    .todays_recipes_content {
+        grid-template-columns: 1fr 1fr;
+        width: clamp (fit-content , var(--width-12col) , fit-content);
+        margin: 0 auto;
+        gap: 50px;
+    }
+
+    .category_selection_background {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        height: fit-content;
+        padding: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
