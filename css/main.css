@@ -1240,7 +1240,7 @@ h3[data-category="dessert"]{
     }
 
     .hero {
-        background-size: cover;
+        background-image: none;
     }
 
     .hero-container {
