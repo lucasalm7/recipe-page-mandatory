@@ -196,7 +196,6 @@ body, html {
     width: var(--width-12col);
     height: fit-content;
     display: grid;
-    grid-template-columns: 1;
     grid-template-rows: 130px auto;
     gap: var(--grid-gap);
     box-sizing: border-box;
@@ -680,6 +679,7 @@ h3[data-category="dessert"]{
 .footer {
     background-color: var(--primary-color);
     margin-top: 40px;
+    width: var(--width-12col);
 }
 
 .footer_background {
@@ -1237,11 +1237,16 @@ h3[data-category="dessert"]{
     }
 
     .hero {
-        background-image: none;
+        background-size: cover;
     }
 
     .hero-text {
-        margin-left: 25px;
+        grid-column: 2 / span 4;
+    }
+
+    .todays_recipes_headline , .category_selection_headline , .in_the_kitchen_headline {
+        width: 95%;
+        margin: 70px auto auto auto;
     }
 
     .todays_recipes_content {
@@ -1249,6 +1254,10 @@ h3[data-category="dessert"]{
         width: clamp (fit-content , var(--width-12col) , fit-content);
         margin: 0 auto;
         gap: 50px;
+    }
+
+    .background_sections_svg {
+        background-image: none;
     }
 
     .category_selection_background {
@@ -1261,4 +1270,35 @@ h3[data-category="dessert"]{
         width: 90%;
         margin: 0 auto;
     }
+
+    .image-section {
+        display: none;
+    }
+
+    .in_the_kitchen_main_block {
+        width: 95%;
+        margin: 30px auto auto auto;
+        height: fit-content;
+    }
+
+    .in_the_kitchen_left_block_one{
+        grid-column: 1 ;
+    }
+    
+    .in_the_kitchen_left_block_two {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .in_the_kitchen_left_block_three {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin: auto;
+    }
+
+    .in_the_kitchen_right_block_one , .in_the_kitchen_right_block_two , .in_the_kitchen_right_block_three {
+        display: none;
+    }
+
+   
 }
