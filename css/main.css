@@ -1263,10 +1263,9 @@ h3[data-category="dessert"]{
     }
 
     .todays_recipes_content {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         width: clamp (fit-content , var(--width-12col) , fit-content);
         margin: 0 auto;
-        gap: 50px;
     }
 
     .background_sections_svg {
@@ -1275,7 +1274,7 @@ h3[data-category="dessert"]{
 
     .category_selection_background {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-template-columns: repeat(4, 1fr);
         gap: 25px;
         height: fit-content;
