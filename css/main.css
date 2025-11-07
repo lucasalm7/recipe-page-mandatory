@@ -679,11 +679,9 @@ h3[data-category="dessert"]{
 .footer {
     background-color: var(--primary-color);
     margin-top: 40px;
-    width: var(--width-12col);
 }
 
 .footer_background {
-    width: var(--width-12col);
     height: 147px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1232,7 +1230,39 @@ h3[data-category="dessert"]{
 
 @media (width <= 1000px) {
 
+    /* SHARED CODE */
+
     :root { --width-12col : 95% }
+
+    .footer {
+    width: var(--width-full);
+   }
+
+   .footer_link {
+    font-size: 4px;
+   }
+
+   .footer_text_links {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+   }
+
+   .footer_text_links_commun {
+    font-size: 10px;
+    margin: 0 0 7px 5px;
+   }
+   
+   .footer_social_commun {
+    font-size: 10px;
+   }
+
+   .footer_link_etsy {
+    font-size: 10px;
+   }
+
+   /* SHARED CODE END */
+   /* MAIN PAGE START */
 
     .menu-container {
         width: auto;
@@ -1251,10 +1281,6 @@ h3[data-category="dessert"]{
         grid-column: 2 / span 9;
         height: 80px;
         margin-top: 150px;
-    }
-
-    .svgscroll {
-        height: 50%;
     }
 
     .category_selection_headline , .in_the_kitchen_headline {
@@ -1321,29 +1347,12 @@ h3[data-category="dessert"]{
         display: none;
     }
 
-
-   .hero_recipe_details_ingredients_list_two {
-        grid-column: 1 / 3;
-   }
-
-   .hero_image {
-    grid-row: 4;
-    margin-top: 30px;
-    grid-column: 6 / span 5;
-   }
-
-   .instructions_main_block_img_one , .instructions_main_block_img_two {
-    display: none;
-   }
-
-   .instructions_list {
-    grid-column: 3 / span 10;
-   }
-
-   .search-box-searchpage {
-    grid-column: 2 / span 4;
-   }
-
+    /* MAIN PAGE END */
+    /* HOW TO PLATE START  */
+    .svgscroll {
+        height: 50%;
+    }
+    
    .hero2 {
     background-image: none;
     min-height: 500px;
@@ -1355,7 +1364,7 @@ h3[data-category="dessert"]{
     font-size: 15px;
     height: 30px;
    }
-
+   
    .top_food_presentation_techniques_box {
     display: grid;
     grid-template-rows: 8;
@@ -1399,60 +1408,27 @@ h3[data-category="dessert"]{
     font-size: 18px;
    }
 
-   .footer_link {
-    font-size: 4px;
+    /* HOW TO PLATE END  */
+    /* RECIPE DETAILS START */
+
+   .hero_recipe_details_ingredients_list_two {
+        grid-column: 1 / 3;
    }
 
-   .footer_text_links {
-    margin-top: 12px;
-    display: flex;
-    align-items: center;
+   .hero_image {
+    grid-row: 4;
+    margin-top: 30px;
+    grid-column: 6 / span 5;
    }
 
-   .footer_text_links_commun {
-    font-size: 10px;
-    margin: 0 0 7px 5px;
+   .instructions_main_block_img_one , .instructions_main_block_img_two {
+    display: none;
+   }
+
+   .instructions_list {
+    grid-column: 3 / span 10;
    }
    
-   .footer_social_commun {
-    font-size: 10px;
-   }
-
-   .footer_link_etsy {
-    font-size: 10px;
-   }
-
-   .hero-container-searchpage {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, auto);
-   }
-
-   .search-box-searchpage {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 100px 0 0 50px;
-   }
-
-   .filter-category-checkbox {
-    grid-column: 1;
-    grid-row: 3;
-    margin-top: 20px;
-   }
-
-   .serp-item h3 {
-    font-size: 14px;
-   }
-
-   .serp-item h2 {
-    font-size: 18px;
-   }
-
-   .serp-item p {
-    font-size: 12px;
-   }
-
-   /* recipe details start */
-
    .hero-container_recipe_details {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
@@ -1486,6 +1462,43 @@ h3[data-category="dessert"]{
 
   .instructions_list {
     grid-column: 1;
-    width: 70%;
+    width: 65%;
   }
+
+    /* RECIPE DETAILS END */
+    /* SEARCH PAGE START */
+
+   .search-box-searchpage {
+    grid-column: 2 / span 4;
+   }
+
+    .hero-container-searchpage {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+   }
+
+   .search-box-searchpage {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 100px 0 0 50px;
+   }
+
+   .filter-category-checkbox {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 20px;
+   }
+
+   .serp-item h3 {
+    font-size: 14px;
+   }
+
+   .serp-item h2 {
+    font-size: 18px;
+   }
+
+   .serp-item p {
+    font-size: 12px;
+   }
+    /* SEARCH PAGE END */
 }
