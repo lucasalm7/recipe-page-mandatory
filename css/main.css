@@ -688,6 +688,7 @@ h3[data-category="dessert"]{
     color: var(--color_black);
     margin: 0 auto;
     align-items: center;
+    padding: 0 100px 0 100px;
 }
 
 .footer_social_media {
