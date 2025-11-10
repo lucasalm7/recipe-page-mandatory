@@ -1249,6 +1249,10 @@ h3[data-category="dessert"]{
     padding: 0 15px 0 15px;
    }
 
+   .footer_background {
+    padding: 0;
+   }
+
    .footer_link {
     font-size: 4px;
    }
