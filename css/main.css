@@ -989,8 +989,7 @@ h3[data-category="dessert"]{
 }
 
 .filter-category-checkbox {
-    background-color: var(--background-color-dark-bg);
-    background: linear-gradient(90deg, #ededed11, #ededed07);
+    background: linear-gradient(90deg, #ededed11, #ededed00);
     grid-column: 6 / span 7;
     grid-row: 2;
     padding: 30px 40px;
