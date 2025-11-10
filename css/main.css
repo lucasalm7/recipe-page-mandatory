@@ -1260,6 +1260,11 @@ h3[data-category="dessert"]{
 
    .footer_link_etsy {
     font-size: 10px;
+    margin-right: 10px;
+   }
+
+   .footer_link_text {
+    margin-right: 10px;
    }
 
    /* SHARED CODE END */
