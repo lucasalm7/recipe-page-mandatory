@@ -834,7 +834,8 @@ h3[data-category="dessert"]{
     align-items: center;
     color: var(--color_black);
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 12px;
     text-align: center;
     height: 110px;
 }
@@ -842,7 +843,7 @@ h3[data-category="dessert"]{
 .top_food_presentation_techniques_box svg {
     min-width: 45px;
     min-height: 45px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 2px 0;
     stroke: var(--primary-color);
     fill: var(--primary-color);
 }
@@ -1314,8 +1315,7 @@ h3[data-category="dessert"]{
 
     .todays_recipes_content {
         grid-template-columns: 1fr;
-        width: 80%;
-        margin-left: 5%;
+        width: 100%;
     }
 
     .background_sections_svg {
@@ -1329,8 +1329,7 @@ h3[data-category="dessert"]{
         gap: 25px;
         height: fit-content;
         padding: 10px;
-        width: fit-content;
-        margin-left: 20%;
+        margin: auto;
     }
 
     .image-section {
@@ -1338,8 +1337,7 @@ h3[data-category="dessert"]{
     }
 
     .in_the_kitchen_main_block {
-        width: 90%;
-        margin-left: 5px;
+        width: 100%;
         height: fit-content;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
@@ -1364,6 +1362,10 @@ h3[data-category="dessert"]{
 
     .in_the_kitchen_right_block_one , .in_the_kitchen_right_block_two , .in_the_kitchen_right_block_three {
         display: none;
+    }
+
+    .category_selection_background_dessert {
+        grid-column: 1 / span 2;
     }
 
     /* MAIN PAGE END */
@@ -1475,18 +1477,32 @@ h3[data-category="dessert"]{
     font-size: 27px;
    }
 
+   .instructions_list li {
+    font-size: 12px;
+    margin-right: 30px;
+   }
+
+   .instructions_list br {
+    display: none;
+   }
+
    .instructions_main_block {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
   }
 
   .instructions_list {
-    grid-column: 1;
-    width: 65%;
+    grid-column: 1 / span 12;
+   /*  width: 65% */;
   }
 
   .hero_recipe_details_ingredients_list_one {
     font-size: 12px;
   }
+
+    .hero_recipe_details_ingredients_list_one br {
+        display: none;
+    }
+
 
     /* RECIPE DETAILS END */
     /* SEARCH PAGE START */
@@ -1524,4 +1540,56 @@ h3[data-category="dessert"]{
     font-size: 12px;
    }
     /* SEARCH PAGE END */
+
+}
+@media (width <= 600px) { 
+
+    .instructions_main {
+        width: 80%;
+        margin: 0;
+    }
+
+    .instructions_main_block {
+        width: 90%;
+    }
+
+    .footer {
+        width: 100%;
+        padding: 0 0 0 15px;
+    }
+
+    .footer_background {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: auto auto;
+    margin: 0;
+}
+
+
+    .footer_social_media {
+    grid-column: 1 / span 1;
+    }
+
+    .footer_text_links {
+    grid-column: 2 / span 1;
+    padding-right: 50px;
+    }
+
+    .footer_link {
+    grid-column: 1 / span 2;
+    border-left: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding-right: 50px;
+    }
+
+    .footer_link_text {
+    align-items: flex-start;
+    grid-column: 1;
+    }
+
+    .footer_link_etsy {
+    grid-column: 2;
+    padding-top: 0;
+    }
 }
