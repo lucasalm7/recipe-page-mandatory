@@ -1486,10 +1486,6 @@ h3[data-category="dessert"]{
     display: none;
    }
 
-   .instructions_main_block {
-    /* grid-template-columns: 1fr; */
-  }
-
   .instructions_list {
     grid-column: 1 / span 12;
    /*  width: 65% */;
@@ -1561,7 +1557,8 @@ h3[data-category="dessert"]{
     .footer_background {
     grid-template-columns: 200px 200px;
     grid-template-rows: auto auto;
-    margin: 0;
+    margin: 0 auto;
+    width: 80%;
 }
 
 
